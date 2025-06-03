@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<script src="https://www.gstatic.com/charts/loader.js"></script>
+
+<body>
+<div id="myChart" style="width:100%; max-width:600px; height:500px;"></div>
+
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+// Set Data
+const data = google.visualization.arrayToDataTable([
+  ['Updates', 'How Much'],
+  ['In the Works',1],
+  ['Planned for Later',1],
+  ['Updates already Realesed',48]
+]);
+
+// Set Options
+const options = {
+  title: 'Updates',
+  is3D: true
+};
+
+// Draw
+const chart = new google.visualization.PieChart(document.getElementById('myChart'));
+chart.draw(data, options);
+
+}
+</script>
+
+</body>
+</html>
+
+
+
